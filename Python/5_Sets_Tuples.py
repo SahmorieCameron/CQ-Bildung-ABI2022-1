@@ -332,3 +332,15 @@ userset1.add(pop2)
 print()
 print(userset1)
 print()
+
+#### Summary - datastructures
+
+# YOu should know the basics of the four basic datastructures included
+# in the standard python package
+
+# list
+# dictionary
+# tuple
+# set
+
+# made up of different elements, strings, integers, floats etc.

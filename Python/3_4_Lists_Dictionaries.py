@@ -892,4 +892,5 @@ print(ModDict)
 # Keys can be strings or numbers
 # Keys point to values
 # Values can be any type of variable, including lists or dictionaries,
-# that can also contain lists or dictionaries and so on
+# that can also contain lists or dictionaries and so on. We will continue with
+# on day 5.

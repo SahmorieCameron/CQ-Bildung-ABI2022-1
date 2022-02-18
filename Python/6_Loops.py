@@ -106,7 +106,7 @@
 #         print(elem)
 
 # prints out each element of the list in order.
-# take one element at a time and perform the instructions on it.
+# take one element atmaximum a time and perform the instructions on it.
 
 #### Exercise 63
 # Create a list that contains at least 20 different numbers that aren't sorted
@@ -239,14 +239,17 @@
 #  takes i = 0, j runs from 0-4,
 #  then i is updated and then takes i=1 and runs j 1-4 again until i=4 and j=4
 
-#Generating 3 random lists within a list
-import random
-matrix = [list(random.sample(range(10, 100), 5)),
-list(random.sample(range(10, 100), 5)),
-list(random.sample(range(10, 100), 5))]
-print(matrix)
-
 #### Exercise 25
+
+# Generating 3 random lists within a list
+import random
+
+matrix = [
+    list(random.sample(range(10, 100), 5)),
+    list(random.sample(range(10, 100), 5)),
+    list(random.sample(range(10, 100), 5)),
+]
+print(matrix)
 
 # Write a program that uses nested loops to tackle the tasks:
 # Sum up all entries of the matrix
@@ -255,7 +258,7 @@ print(matrix)
 
 #### Sum up all entries of the matrix
 
-#dumb way
+# dumb way
 # submatrix1=matrix[0]
 # print(submatrix1)
 # submatrix2=matrix[1]
@@ -273,25 +276,52 @@ print(matrix)
 
 # Much neater way
 print("Sum up all entries of the matrix")
-sum=0
-for i in matrix[0]:
-     for j in matrix[1]:
-        for k in matrix[2]:
-            sum = sum + i + j + k
-
+sum = 0
+for i in range(
+    3
+):  # defines the length of the sublist - here it is 3 because we have already set it, if we didn't know it.. could use range(len(matrix))
+    for j in range(
+        5
+    ):  # number of entries within each sublist, again we know this because we created the sublist.
+        sum += matrix[i][
+            j
+        ]  # takes the sum of each sublist could also be written as sum = sum + matrix[i][j]
 print(sum)
 
 print("Search for the coordinates of maximal value of the matrix")
+max_value = 0
+x = 0
+y = 0
+for i in range(
+    len(matrix)
+):  # range(len(matrix)) can be used in instances where we don't know the length of our list.
+    for j in range(
+        len(matrix[0])
+    ):  # range(len(matrix[0])) used when we don't know the length of sublist.
+        if matrix[i][j] >= max_value:
+            max_value = matrix[i][j]
+            x = i
+            y = j
+print("The maximum value is ", max_value, " and its coordinates are", x, ",", y)
+# Same thing just using range which we already know and can define.
+print("Search for the coordinates of maximal value of the matrix")
+max_value = 0
+x = 0
+y = 0
+for i in range(3):
+    for j in range(5):
+        if matrix[i][j] >= max_value:
+            max_value = matrix[i][j]
+            x = i
+            y = j
+print("The maximum value is ", max_value, " and its coordinates are", x, ",", y)
 
-max_value = None
+print(
+    "Describe the multiplication of the components of two matrices in a third resulting matrix"
+)
+newmatrix = []
 for i in matrix[0]:
-    if (max_value is None or i > max_value):
-        max_value = i
-        for j in matrix[1]:
-            if (max_value is None or j > max_value):
-                max_value = j
-            for k in matrix[2]:
-                if (max_value is None or k > max_value):
-                    max_value = k
-
-print('Maximum value:', max_value)
+    for j in matrix[1]:
+        print(i, "*", j, "=", i * j)
+        newmatrix.append(i * j)
+print(newmatrix)

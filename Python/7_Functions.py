@@ -1,11 +1,14 @@
 # #### Functions
 #
 # # Programmers hate repeating things
-#
+# # Therefore each repeating process should be written as a function
+# # Makes it way more straight forward to repeat processes
+# # Also results in better structure and outline of the code
+
 # # The Signature
 #
-# # The signature describes the name of the function, which parameter/s it uses and which data type
-# # the return value
+# # The signature describes the name of the function, which parameter/s it uses and which data type the return value of the function and thus the function itself has.
+# e.g. def functionname(datatype)
 #
 # # Parameters
 #
@@ -27,7 +30,7 @@
 # # The feature def
 #
 # # In python functions are defined with the feature def:
-# # the statement def is follwed by the name of the function with the parameters passed to functions in the brackets. The statemetns after a":" in the first line are executed when the function is used
+# # the statement def is follwed by the name of the function with the parameters passed to functions in the brackets. The statements after a":" in the first line are executed when the function is used.
 # # This continues until either the idented statements end or a return is encountered.
 #
 #
@@ -176,57 +179,127 @@
 
 # in Exercise 25, we worked with nested loops to find the maximum of a matrix, calculate the sum of all entries of a matrix and create a new matrix that is the result of element-wise multiplication of two other matrices
 # Write a program that contains three different functions, one for each of the three tasks above
+#
+# import random
+#
+# matrix = [
+#     list(random.sample(range(10, 100), 5)),
+#     list(random.sample(range(10, 100), 5)),
+#     list(random.sample(range(10, 100), 5)),
+# ]
+# print(matrix)
+#
+# print("Sum of all entries of a matrix")
+# # ()
+# def function7(inputmatrix):
+#     sum = 0
+#     for i in range(len(inputmatrix)):
+#         for j in range(len(inputmatrix)):
+#             sum += inputmatrix[i][j]
+#     return sum
+#
+#
+# summatrix = function7(matrix)
+# print(summatrix)
+#
+#
+# print("Function for the maximal value of the matrix")
+#
+#
+# def function8(inputmatrix):
+#     max_value = 0
+#     for i in range(len(inputmatrix)):
+#         for j in range(len(inputmatrix[0])):
+#             if inputmatrix[i][j] >= max_value:
+#                 max_value = inputmatrix[i][j]
+#     return max_value
+#
+#
+# maxmatrix = function8(matrix)
+# print("The maximum value is ", maxmatrix)
+#
+# print(
+#     "Function for the multiplication of the components of two matrices in a third resulting matrix"
+# )
+#
+#
+# def function9(inputmatrix):
+#     newmatrix = []
+#     for i in inputmatrix[0]:
+#         for j in inputmatrix[1]:
+#             print(i, "*", j, "=", i * j)
+#             newmatrix.append(i * j)
+#     return newmatrix
+#
+#
+# trinitymatrix = function9(matrix)
+# print("New matrix is", trinitymatrix)
 
+
+#### Multiple Returns
+
+# Python allows you to return multiple values to the program
+
+#
+# def sum_sub(Int1, Int2):
+#     sumup = Int1 + Int2
+#     subup = Int1 - Int2
+#     return sumup, subup  # pay attention to return order
+#
+#
+# SumEx, SubEx = sum_sub(
+#     15, 25
+# )  # first returned value is always the first variable defined. Have to declare 2 new variables
+#
+# import random
+#
+#
+# def function11(a, b):
+#     sumup = a + b
+#     subup = a - b
+#     multiup = a * b
+#     divup = a / b
+#     return sumup, subup, multiup, divup
+#
+#
+# for i in range(3):
+#     SumEx, SubEx, MultiEx, DivEx = function11(
+#         random.randint(0, 100), random.randint(0, 100)
+#     )
+#     print(
+#         "1.The sum of the integers is "
+#         + str(SumEx)
+#         + ". "
+#         + "2.Subtracting the two variables "
+#         + str(SubEx)
+#         + ". "
+#         + "3.Multiplying the two integers "
+#         + str(MultiEx)
+#         + ". "
+#         + "4.Dividing the two integers we get "
+#         + str(DivEx)
+#         + ". "
+#     )
+
+#### Exercise 32 - Multiple returns from lists
+
+# Take your functions from exercise 29 and create a new one that returns both results at once
+# The function should only include one loop.
 import random
 
-matrix = [
-    list(random.sample(range(10, 100), 5)),
-    list(random.sample(range(10, 100), 5)),
-    list(random.sample(range(10, 100), 5)),
-]
-print(matrix)
-
-# ()
-def function7(inputmatrix):
-    sum = 0
-    for i in range(len(inputmatrix)):
-        for j in range(len(inputmatrix)):
-            sum += inputmatrix[i][j]
-    return sum
+randomlist = random.sample(range(0, 20), 5)
+print(randomlist)
 
 
-summatrix = function7(matrix)
-print(summatrix)
+def function12(inputlist):
+    listsum = 0
+    revlist = []
+    for elem in inputlist:
+        listsum += elem
+        revlist.insert(0, elem)
+    return listsum, revlist
 
 
-print("Function for the maximal value of the matrix")
-
-
-def function8(inputmatrix):
-    max_value = 0
-    for i in range(len(inputmatrix)):
-        for j in range(len(inputmatrix[0])):
-            if inputmatrix[i][j] >= max_value:
-                max_value = inputmatrix[i][j]
-    return max_value
-
-
-maxmatrix = function8(matrix)
-print("The maximum value is ", maxmatrix)
-
-print(
-    "Function for the multiplication of the components of two matrices in a third resulting matrix"
-)
-
-
-def function9(inputmatrix):
-    newmatrix = []
-    for i in inputmatrix[0]:
-        for j in inputmatrix[1]:
-            print(i, "*", j, "=", i * j)
-            newmatrix.append(i * j)
-    return newmatrix
-
-
-trinitymatrix = function9(matrix)
-print("New matrix is", trinitymatrix)
+listEx, revEx = function12(randomlist)
+print("Here is the sum of our randomly generated list " + str(listEx))
+print("Here is our reverse list " + str(revEx))

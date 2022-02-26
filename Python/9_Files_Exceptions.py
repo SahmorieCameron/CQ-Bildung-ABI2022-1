@@ -196,15 +196,88 @@
 # Both exceptions should belong to the same try:
 # Print out the results of the division a tthe end and try several different inputs
 
+# import random
+#
+# intran = random.randint(0, 101)
+# try:
+#     userinput = int(input("Pick a number to be divided: "))
+#     division = intran / userinput
+# except ValueError:
+#     print("No, please pick an actual number")
+# except ZeroDivisionError:
+#     print("No, dividing by zero is not allowed")
+# else:
+#     print(division)
+#
+# #### Exceptions with homemade errors
+#
+# # You can use these exceptions even with "homemade" errors
+# # e.g. if you want a user to input a number in a specific range you could try something like :
+# try:
+#     input1 = int(input("What is your number?"))
+#     if input not in [1, 2, 3, 4, 5]:
+#         raise RuntimeError["Your number is out of range"]
+# except RuntimeError:
+#     print("Your number is out of range!")
+# except:
+#     pass
+
+#### Exercise 42 - Being an Esper
+
+# We want to write a more complex program in which the user guesses a number from 1,2,or 3. The program should run 25 tries for the user and count how often he guessed correctly (while loop).
+# The program should raise an exceptin if the user put in a number outside of the range of 1 to 3 and another exception for inputs that weren't integer.
+# Count how many tries the user needed to finish the 25 interations(in the finally command).
+#
+# import random
+#
+# i = 0
+# g = 0
+# ves = 0
+# while i < 10:
+#     try:
+#         intrand = random.randint(0, 4)
+#         UI1 = int(input("Please pick 1, 2 or 3: "))
+#         if UI1 == intrand:
+#             print("Well done you have guessed correctly. Guess again.")
+#         elif UI1 != intrand:
+#             print("Wrong, guess again.")
+#         elif UI1 not in [1, 2, 3]:
+#             print("That number is not an option")
+#         i += 1
+#     except ValueError:
+#         print("Please select an actual number")
+#     finally:
+#         if UI1 == intrand:
+#             g += 1
+#         else:
+#             pass
+# print("Finished. You managed to guess correctly " + str(g) + " times.")
+# if g >= 20:
+#     print("You may be an Esper yet.")
+# else:
+#     print("You exhibit no psychic tendencies")
+
+#### UNFINISHED!
+
+#mainly used for complex programs using multiple scripts
+
+# name refers to the name of the script, the name handed over to the compiler.e.g. Day11.py.
+# when imported you don't need the file extension, so e,g, import Day11
+# main is a python specific variable, means the complete name of the file including extensions.
+#variables with two unserdcores before are
+
 import random
 
-intran = random.randint(0, 101)
-try:
-    userinput = int(input("Pick a number to be divided: "))
-    division = intran / userinput
-except ValueError:
-    print("No, please pick an actual number")
-except ZeroDivisionError:
-    print("No, dividing by zero is not allowed")
-else:
-    print(division)
+def main():
+    print("Hello WOrld")
+    randomlist=[]
+    for i in range(250):
+        randnr =random.random()
+        randomlist.append(randnr * random.randint(1,11))
+    print(len(randomlist))
+    if len(randomlist) == 250:
+        print("List is long enough")
+
+
+if__name__ == "__main__":
+    main()

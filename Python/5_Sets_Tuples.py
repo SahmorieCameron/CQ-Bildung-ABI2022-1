@@ -2,145 +2,144 @@
 # we also continued learning about various other data structures,
 # tuples and sets
 
-# # Creating a nested addressbook
-# addressbook = {}
-# addressbook["blahblah"] = {}
-# addressbook["blahblah"]["address"] = ["blahblahtown"]
-# addressbook["blahblah"]["Mobile"] = ["0123456789"]
-#
-# # Exercise 27
-#
-# book1 = {}
-# book1["Harry"] = {}
-# book1["Harry"]["Address"] = ["4 Privet Drive, Little Whinging, Surrey"]
-# book1["Harry"]["Familiar"] = ["Hedwig"]
-# book1["Harry"]["Birthday"] = ["31.07.1980"]
-# book1["Harry"]["e-mail"] = ["urawizardarry@aol.com"]
-#
-# book1["Ron"] = {}
-# book1["Ron"]["Address"] = ["15 Ottery St Catchpole, Devon"]
-# book1["Ron"]["Familiar"] = ["Scabbers"]
-# book1["Ron"]["Birthday"] = ["01.03.1980"]
-# book1["Ron"]["e-mail"] = ["kingweasley@gmail.com"]
-#
-# book1["Hermione"] = {}
-# book1["Hermione"]["Address"] = ["1 Mystery House, Somewhere, London"]
-# book1["Hermione"]["Familiar"] = ["Cruickshanks"]
-# book1["Hermione"]["Birthday"] = ["19.09.1979"]
-# book1["Hermione"]["e-mail"] = ["hjgranger@hotmail.co.uk"]
-#
-# print(book1["Harry"])
-# print()
-# print(book1["Ron"])
-# print()
-# print(book1["Hermione"])
-#
-# # Exercise 19 - Adjusting the addressbook
-#
-# book2 = {}
-# book2["Harry"] = {}
-# book2["Harry"]["Address"] = ["4 Privet Drive, Little Whinging, Surrey"]
-# book2["Harry"]["Familiar"] = ["Hedwig"]
-# book2["Harry"]["Birthday"] = ["31.07.1980"]
-# book2["Harry"]["e-mail"] = ["urawizardarry@aol.com"]
-# book2["Harry"]["Parents"] = ["..."]
-#
-# book2["Ron"] = {}
-# book2["Ron"]["Address"] = ["15 Ottery St Catchpole, Devon"]
-# book2["Ron"]["Familiar"] = ["*Scrambled*"]
-# book2["Ron"]["Birthday"] = ["01.03.1980"]
-# book2["Ron"]["e-mail"] = ["kingweasley@gmail.com"]
-#
-# book2["Hermione"] = {}
-# book2["Hermione"]["Address"] = ["1 Mystery House, Somewhere, London"]
-# book2["Hermione"]["Familiar"] = ["Cruickshanks"]
-# book2["Hermione"]["Birthday"] = ["19.09.1979"]
-# book2["Hermione"]["e-mail"] = ["hjgranger@hotmail.co.uk"]
-#
-#
-# # Take your dictionary from exercise 27
-# # write a program that allows the user to make changes
-#
-# # Ask the user if he wants to add an entry, delete an entry or change an entry
-#
-# # If the user wants to delete an entry,
-# # ask for the entry which should be removed and remove it
-#
-# # If the user wants to change an entry ask which part should be changed AND
-# # what the content should be
-#
-# # If the user wants to add an entry,
-# # ask for the information necessary to create a new entry
-#
-# # print the dictionary at the start and end of the program
-#
-# print(book2["Harry"])
-# print()
-# print(book2["Ron"])
-# print()
-# print(book2["Hermione"])
-#
-# print()
-# userinput1 = input(
-#     "Would you like to add an new entry, delete an entry or change an entry?: "
-# )
-# print()
-# if userinput1 == "Add" or userinput1 == "add" or userinput1 == "ADD":
-#     userinput2 = input("Please add yourself to our addressbook: ")
-#     book2[userinput2] = {}
-#     userinput3 = input("Please add your address: ")
-#     book2[userinput2]["Address"] = [userinput3]
-#     userinput4 = input("Please add your animal familiar: ")
-#     book2[userinput2]["Familiar"] = [userinput4]
-#     userinput5 = input("Please add your birthday: ")
-#     book2[userinput2]["Birthday"] = [userinput5]
-#     userinput6 = input("Please add your e-mail: ")
-#     book2[userinput2]["e-mail"] = [userinput6]
-#     print()
-#     print(book2)
-#     print()
-# elif userinput1 == "Delete" or userinput1 == "delete" or userinput1 == "DELETE":
-#     userinput7 = input("Would you like to select a person or a key to remove: ")
-#     if userinput7 == "person" or userinput7 == "Person" or userinput7 == "PERSON":
-#         userinput8 = input("Please select which person to delete: ")
-#         del book2[userinput8]
-#         print()
-#         print(book2)
-#     elif userinput7 == "key" or userinput7 == "Key" or userinput7 == "KEY":
-#         userinput8 = input(
-#             "Please select which person's key to delete from the addressbook: "
-#         )
-#         print("You have selected " + userinput8 + ".")
-#         print(book2[userinput8])
-#         userinput9 = input(
-#             "Which key to delete from " + userinput8 + " in the addressbook: "
-#         )
-#         del book2[userinput8][userinput9]
-#         print(book2[userinput8])
-#         print()
-#     else:
-#         print("This option is not recognized. Please rerun the programme")
-# elif userinput1 == "change" or userinput1 == "Change" or userinput1 == "CHANGE":
-#     userinput9 = input(
-#         "Please select which person's key to change from the addressbook: "
-#     )
-#     print("You have selected " + userinput9 + ".")
-#     print(book2[userinput9])
-#     userinput10 = input(
-#         "Which key to update from " + userinput9 + " in the addressbook: "
-#     )
-#     userinput11 = input("Update the key for " + userinput9 + ".: ")
-#     book2[userinput9][userinput10] = userinput11
-#     print(book2[userinput9])
-# elif userinput1 == "nah" or userinput1 == "no" or userinput1 == "No":
-#     print("Then press alt-f4 and go about your business. kmt")
-# else:
-#     print("This option is not recognized. Please rerun the programme")
-#     print()
-#     print()
+# Creating a nested addressbook
+addressbook = {}
+addressbook["blahblah"] = {}
+addressbook["blahblah"]["address"] = ["blahblahtown"]
+addressbook["blahblah"]["Mobile"] = ["0123456789"]
+
+# Exercise 27
+
+book1 = {}
+book1["Harry"] = {}
+book1["Harry"]["Address"] = ["4 Privet Drive, Little Whinging, Surrey"]
+book1["Harry"]["Familiar"] = ["Hedwig"]
+book1["Harry"]["Birthday"] = ["31.07.1980"]
+book1["Harry"]["e-mail"] = ["urawizardarry@aol.com"]
+
+book1["Ron"] = {}
+book1["Ron"]["Address"] = ["15 Ottery St Catchpole, Devon"]
+book1["Ron"]["Familiar"] = ["Scabbers"]
+book1["Ron"]["Birthday"] = ["01.03.1980"]
+book1["Ron"]["e-mail"] = ["kingweasley@gmail.com"]
+
+book1["Hermione"] = {}
+book1["Hermione"]["Address"] = ["1 Mystery House, Somewhere, London"]
+book1["Hermione"]["Familiar"] = ["Cruickshanks"]
+book1["Hermione"]["Birthday"] = ["19.09.1979"]
+book1["Hermione"]["e-mail"] = ["hjgranger@hotmail.co.uk"]
+
+print(book1["Harry"])
+print()
+print(book1["Ron"])
+print()
+print(book1["Hermione"])
+
+# Exercise 19 - Adjusting the addressbook
+
+book2 = {}
+book2["Harry"] = {}
+book2["Harry"]["Address"] = ["4 Privet Drive, Little Whinging, Surrey"]
+book2["Harry"]["Familiar"] = ["Hedwig"]
+book2["Harry"]["Birthday"] = ["31.07.1980"]
+book2["Harry"]["e-mail"] = ["urawizardarry@aol.com"]
+book2["Harry"]["Parents"] = ["..."]
+
+book2["Ron"] = {}
+book2["Ron"]["Address"] = ["15 Ottery St Catchpole, Devon"]
+book2["Ron"]["Familiar"] = ["*Scrambled*"]
+book2["Ron"]["Birthday"] = ["01.03.1980"]
+book2["Ron"]["e-mail"] = ["kingweasley@gmail.com"]
+
+book2["Hermione"] = {}
+book2["Hermione"]["Address"] = ["1 Mystery House, Somewhere, London"]
+book2["Hermione"]["Familiar"] = ["Cruickshanks"]
+book2["Hermione"]["Birthday"] = ["19.09.1979"]
+book2["Hermione"]["e-mail"] = ["hjgranger@hotmail.co.uk"]
 
 
-# Here I will put Christoph's code for this exercise as it is slightly different
+# Take your dictionary from exercise 27
+# write a program that allows the user to make changes
+
+# Ask the user if he wants to add an entry, delete an entry or change an entry
+
+# If the user wants to delete an entry,
+# ask for the entry which should be removed and remove it
+
+# If the user wants to change an entry ask which part should be changed AND
+# what the content should be
+
+# If the user wants to add an entry,
+# ask for the information necessary to create a new entry
+
+# print the dictionary at the start and end of the program
+
+print(book2["Harry"])
+print()
+print(book2["Ron"])
+print()
+print(book2["Hermione"])
+
+print()
+userinput1 = input(
+    "Would you like to add an new entry, delete an entry or change an entry?: "
+)
+print()
+if userinput1 == "Add" or userinput1 == "add" or userinput1 == "ADD":
+    userinput2 = input("Please add yourself to our addressbook: ")
+    book2[userinput2] = {}
+    userinput3 = input("Please add your address: ")
+    book2[userinput2]["Address"] = [userinput3]
+    userinput4 = input("Please add your animal familiar: ")
+    book2[userinput2]["Familiar"] = [userinput4]
+    userinput5 = input("Please add your birthday: ")
+    book2[userinput2]["Birthday"] = [userinput5]
+    userinput6 = input("Please add your e-mail: ")
+    book2[userinput2]["e-mail"] = [userinput6]
+    print()
+    print(book2)
+    print()
+elif userinput1 == "Delete" or userinput1 == "delete" or userinput1 == "DELETE":
+    userinput7 = input("Would you like to select a person or a key to remove: ")
+    if userinput7 == "person" or userinput7 == "Person" or userinput7 == "PERSON":
+        userinput8 = input("Please select which person to delete: ")
+        del book2[userinput8]
+        print()
+        print(book2)
+    elif userinput7 == "key" or userinput7 == "Key" or userinput7 == "KEY":
+        userinput8 = input(
+            "Please select which person's key to delete from the addressbook: "
+        )
+        print("You have selected " + userinput8 + ".")
+        print(book2[userinput8])
+        userinput9 = input(
+            "Which key to delete from " + userinput8 + " in the addressbook: "
+        )
+        del book2[userinput8][userinput9]
+        print(book2[userinput8])
+        print()
+    else:
+        print("This option is not recognized. Please rerun the programme")
+elif userinput1 == "change" or userinput1 == "Change" or userinput1 == "CHANGE":
+    userinput9 = input(
+        "Please select which person's key to change from the addressbook: "
+    )
+    print("You have selected " + userinput9 + ".")
+    print(book2[userinput9])
+    userinput10 = input(
+        "Which key to update from " + userinput9 + " in the addressbook: "
+    )
+    userinput11 = input("Update the key for " + userinput9 + ".: ")
+    book2[userinput9][userinput10] = userinput11
+    print(book2[userinput9])
+elif userinput1 == "nah" or userinput1 == "no" or userinput1 == "No":
+    print("Then press alt-f4 and go about your business. kmt")
+else:
+    print("This option is not recognized. Please rerun the programme")
+    print()
+    print()
+
+# Here I will put Christoph's code for this exercise as it is slightly different.
 
 #### Tuples
 

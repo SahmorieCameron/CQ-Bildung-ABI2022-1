@@ -7,13 +7,7 @@ import random
 class converter:
     def __init__(self):
         self.root = tk.Tk()
-        # self.root.geometry("")
         self.root.title("Temperature Converter")
-        # self.root.resizable(0, 0)
-        #
-        # self.root.columnconfigure(0, weight=1)
-        # self.root.columnconfigure(1, weight=3)
-        #
         self.var1 = tk.StringVar()
         self.var1.set("Input Scale")
         self.var2 = tk.StringVar()
@@ -67,23 +61,16 @@ class converter:
         numcon = self.username_entry.get()
         if self.var1.get() == "Kelvin" and self.var2.get() == "Celsius":
             self.label.config(text=float(numcon) - 273.15)
-        if self.var1.get() == "Kelvin" and self.var2.get() == "Fahrenheit":
-            self.label.config(text=1.8 * (float(numcon) - 273.15) + 32)
-        if self.var1.get() == "Celsius" and self.var2.get() == "Kelvin":
+        elif self.var1.get() == "Kelvin" and self.var2.get() == "Fahrenheit":
+            self.label.config(text=1.8 * (float(numcon) - 273.15) + 32.00)
+        elif self.var1.get() == "Celsius" and self.var2.get() == "Kelvin":
             self.label.config(text=float(numcon) + 273.15)
-        if self.var1.get() == "Celsius" and self.var2.get() == "Fahrenheit":
+        elif self.var1.get() == "Celsius" and self.var2.get() == "Fahrenheit":
             self.label.config(text=float(numcon) * 1.8000) + 32.00
-        if self.var1.get() == "Fahrenheit" and self.var2.get() == "Celsius":
-            self.label.config(text=(float(numcon) - 32) / 1.8000)
-        if self.var1.get() == "Fahrenheit" and self.var2.get() == "Kelvin":
-            self.label.config(text=5 / 9(float(numcon) - 32) + 273.15)
-
-        else:
-            print("That conversion isn't recognised")
+        elif self.var1.get() == "Fahrenheit" and self.var2.get() == "Celsius":
+            self.label.config(text=(float(numcon) - 32.00) / 1.8000)
+        elif self.var1.get() == "Fahrenheit" and self.var2.get() == "Kelvin":
+            self.label.config(text= 5 / 9(float(numcon) - 32.00) + 273.15)
 
 
 converter()
-
-# self.Content = self.text1.get(1.0, "end")
-#         self.label1.config(text="")
-#         print(self.Content)

@@ -1,0 +1,52 @@
+
+
+
+
+import Bio.Entrez as ez
+ez.email = "sjkconline@gmail.com"
+
+with ez.einfo() as query:
+    parse_dict = ez.read(query)
+
+print("The whole String looks like this:\n", xml_string)
+print("")
+print("These are the available databases:\n", parse_dict["DbList"])
+print("")
+# Since we now know the names of our databases we can use the einfo method, with
+# the db attribute to hand over a query about a specific database. In the
+# example below we want to get information about PubMed. We use the ez.read
+# method again to be able to access the result in form of a dictionary.
+with ez.einfo(db="pubmed") as query:
+    PubMedDict = ez.read(query)
+# Now we can print out the keys of our dictionary to see what kind of
+# information is included in our dictionary.
+print("The Keys for PubMed are:\n", PubMedDict.keys())
+# Keep in mind that the Dicitonary is nested since we deal with the tree like
+# structure of XML files. That's why we want to see what keys the dictionary
+# DbInfo contains
+print("The keys for the Dictionary DbInfo are:\n", PubMedDict["DbInfo"].keys())
+print("")
+# Now taht we know we have a key called FieldList we want to see what is saved
+# in there. The nice thing about the NCBI dictionaries is that as soon as the
+# key is something a long the lines of FieldList we can be sure that we have a
+# list as valuie belonging to this key. So thats why we can loop over this list
+# as it#s shown below.
+for field in PubMedDict["DbInfo"]["FieldList"]:
+    # Each entry in our list is again a dictionary that has a multitude of
+    # entries. These specify the advanced search options that are available to
+    # you for running searches in these databases. So iit's good to know them
+    # if you want ot search for specific things.
+    print(field)
+    # Now we want to print out three entries of our dictionaries. To do this we
+    # can either use this first print command in which we access each field
+    # separately like we always did and put together the print outs with ","
+    print(field["Name"], field["FullName"], field["Description"])
+    # We could also use a print command as it's shown here. This command lets
+    # us access again the same field since the "%" is a placeholder before the
+    # key name. We need the "s" after the brackets of each field name to escape
+    # the notation of the "%". This kind of print command is used because it's
+    # less error prone, sinc eyou have to type the name of the dictionary only
+    # once and you don't have to use square brackets. But most importantly, the
+    # code is shorter.
+    print("%(Name)s, %(FullName)s, %(Description)s" % field)
+    print("")

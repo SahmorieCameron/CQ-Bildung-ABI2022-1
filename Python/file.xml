@@ -1,0 +1,36 @@
+XML
+
+
+
+Example Music
+
+<tracks>
+        <tracks>
+                <Length>666</Length>
+                <title>Beethoven's 10th symphony</title>
+                <genre>Classic</genre>
+                <componist>
+                            <name>
+                                  <Given>Ludwig</Given>
+                                  <Last>Beethoven</Last>
+                                  <title>von</title>
+                            <name>
+                </componist>
+        </tracks>
+</tracks>
+
+<tracks>
+        <tracks>
+                <Length>3:50</Length>
+                <title>Let It Be</title>
+                <genre>Rock</genre>
+                <componists>
+                            <name>
+                                  <Given>Lennon</Given>
+                                  <Last>John</Last>
+                                  <Given>Paul</Given>
+                                  <Last>McCartney</Last>
+                            <name>
+                </componists>
+        </tracks>
+</tracks>
